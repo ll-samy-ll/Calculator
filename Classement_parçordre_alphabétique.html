@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>CLASSEMENT DES NOMS PAR ORDRE ALPHABETIQUE</h1>
+
+    <input type="button" value="Entrer des noms" onclick="classement()" />
+    <p>Noms classés:</p>
+    <p id="nomClassé"></p>
+    <input type="button" value="Annuler" onclick="location.reload()" />
+
+    <script>
+      names = [];
+      function classement() {
+        name = prompt("entrer un nom");
+
+        while (name) {
+          names.push(name);
+          name = prompt("entrer un autre nom");
+        }
+
+        names.sort();
+
+        document.getElementById("nomClassé").innerHTML = names.sort();
+      }
+    </script>
+  </body>
+</html>

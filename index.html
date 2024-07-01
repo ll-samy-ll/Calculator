@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>YEsss</h1>
+    <select name="sex" id="sexuel">
+      <option value="Homme">Homme</option>
+      <option value="Femme">Femme</option>
+      <option value="Personnalisé">Personnalisé</option>
+    </select>
+    <input type="button" value="clixk pour voir ton sex" onclick="sexx()" />
+  </body>
+  <script>
+    function sexx() {
+      sex = document.getElementById("sexuel");
+      alert("Votre sex est " + sex.value);
+    }
+  </script>
+</html>

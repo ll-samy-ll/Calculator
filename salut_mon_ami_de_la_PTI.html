@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>SALUT MON AMI DE LA PTI</h1>
+
+    <input type="text" id="nom" />
+    <input
+      type="button"
+      value="Salut mon ami de la PTI, bien vouloir remplir le champ ci contre par votre nom"
+      id="bouton"
+      onclick="salutation()"
+    />
+    <p id="texte1"></p>
+    <p id="texte2"></p>
+
+    <script>
+      function salutation() {
+        const champNom = document.getElementById("nom").value;
+
+        document.getElementById("texte1").innerHTML = "Bonjour " + champNom;
+        document.getElementById("texte2").innerHTML =
+          "Attention de donner le tapioca aux enfants car ils risquent contracter le Kwashiorkor intellectuel Bonne journée !";
+      }
+    </script>
+  </body>
+</html>

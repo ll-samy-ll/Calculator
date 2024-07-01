@@ -1,0 +1,119 @@
+.calculator {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(57, 56, 56);
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: rgb(0, 0, 0) 1.5px 5px 10px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+button {
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  border-radius: 70px;
+  cursor: pointer;
+  border: none;
+  background-color: black;
+  color: white;
+  transition: all 0.25s;
+  margin: 2.5px;
+}
+button:hover {
+  background-color: rgb(49, 47, 47);
+  box-shadow: black 1.5px 5px 10px;
+}
+button:active {
+  background-color: black;
+}
+.operator {
+  background-color: rgb(255, 159, 42);
+  color: black;
+  transition: all 0.25s;
+}
+.operator:hover {
+  background-color: rgb(255, 159, 80);
+  box-shadow: black 1.5px 5px 10px;
+}
+.operator:active {
+  background-color: black;
+}
+
+.container {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+}
+table {
+  position: relative;
+  left: 50px;
+}
+
+.delete {
+  width: 70px;
+  height: 40px;
+  background-color: red;
+  border: none;
+  transition: all 0.25s;
+  border-radius: 70px;
+  cursor: pointer;
+  font-size: 22px;
+}
+.delete:hover {
+  background-color: rgb(251, 84, 84);
+  box-shadow: black 1.5px 5px 10px;
+}
+.delete:active {
+  background-color: red;
+}
+
+#erase {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: -73px;
+}
+
+#input {
+  position: relative;
+  right: 40px;
+  top: 22px;
+  width: 280px;
+  height: 45px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 25px;
+  border: none;
+  background-color: rgb(57, 56, 56);
+  color: white;
+  outline: none;
+}
+
+body {
+  position: relative;
+  background-color: rgb(28, 27, 27);
+}
+
+#equal {
+  position: absolute;
+  left: 410px;
+  height: 310px;
+  border-radius: 300;
+}
+#toogle {
+  position: absolute;
+  background-color: rgb(57, 56, 56);
+  left: 5px;
+  top: 250px;
+  width: 60px;
+  height: 100px;
+  border-radius: 300;
+}
+img {
+  width: 50px;
+  height: 70pxpx;
+  transform: rotate(-90deg);
+}

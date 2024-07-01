@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function chipenkwere(PTI) {
+        k = 0;
+        while (PTI > 0) {
+          x = parseInt(PTI % 10);
+          PTI = parseInt(PTI / 10);
+          k = parseInt(k * 10 + x);
+        }
+        return k;
+      }
+
+      console.log(chipenkwere(2024));
+    </script>
+  </body>
+</html>

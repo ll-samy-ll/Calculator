@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <title>Document</title>
+
+    <style>
+      :root {
+        --violet: rgb(202, 172, 227);
+      }
+      .square1 {
+        width: 600px;
+        height: 400px;
+        background-color: var(--violet);
+        border-radius: 10px;
+        position: absolute;
+        box-shadow: rgb(0, 0, 0) 1px 1px 20px;
+      }
+      .square2 {
+        width: 300px;
+        height: 400px;
+        background-color: rgb(140, 0, 255);
+        border-radius: 10px 50px 50px 10px;
+        position: relative;
+        transition: all 1s;
+        left: 0;
+      }
+      .square {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .login {
+        position: absolute;
+        margin-top: 175px;
+        margin-left: 70px;
+        font-size: 50px;
+      }
+      .sign {
+        position: absolute;
+        margin-top: 175px;
+        margin-left: 350px;
+        font-size: 50px;
+      }
+      .icons {
+        margin-left: 130px;
+        margin-top: 50px;
+      }
+
+      body {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="square">
+      <div class="square1" id="sqr1">
+        <p>Sign In</p>
+
+        <div class="icons">
+          <a href="#"><i class="fa-brands fa-google" id="google_icon"></i></a>
+          <a href="#"
+            ><i class="fa-brands fa-facebook-f" id="facebook_icon"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-linkedin-in" id="linkedin_icon"></i
+          ></a>
+        </div>
+
+        <input
+          type="text"
+          placeholder="Entrer votre Email"
+          title="Entre votre Email"
+          id="mail"
+          class="inp"
+        />
+        <input
+          type="password"
+          placeholder="Entrer votre mot de passe"
+          title="Entrer votre mot de passe"
+          id="password"
+          class="inp"
+        />
+
+        <p><a href="">Mot de passe oublié?</a></p>
+
+        <input type="button" value="CONNECTEZ-VOUS" id="connectBtn" />
+        <p class="sign">SIGN IN</p>
+      </div>
+
+      <div class="square2" id="sqr2"></div>
+    </div>
+    <input type="button" value="Login" id="log" onclick="moveLeft ()" />
+    <input type="button" value="Sign in" id="log" onclick="moveRight ()" />
+  </body>
+
+  <script>
+    const sqr2 = document.getElementById("sqr2");
+    function moveLeft() {
+      sqr2.style.left = "300px";
+      sqr2.style.borderRadius = "50px 10px 10px 50px";
+    }
+    function moveRight() {
+      sqr2.style.left = "0";
+      sqr2.style.borderRadius = "10px 50px 50px 10px";
+    }
+  </script>
+</html>

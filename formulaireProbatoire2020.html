@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      body {
+        position: relative;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .Message {
+        border: solid 1px black;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <hr><h1>Coordonnées</h1></hr>
+      <table>
+        <tr>
+          <td>Nom:</td>
+          <td>
+            <input
+              type="text"
+              placeholder="Entrer votre nom"
+              title="Entrer votre nom"
+              id="nom"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Prénom:</td>
+          <td>
+            <input
+              type="text"
+              placeholder="Entrer votre prénom"
+              title="Entrer votre prénom"
+              id="#"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Adresse:</td>
+          <td>
+            <input
+              type="email"
+              placeholder="Entrer votre email"
+              title="Entrer votre email"
+              id="#"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Code Postal:</td>
+          <td>
+            <input
+              type="text"
+              placeholder="Entrer votre code postal"
+              title="Entrer votre code postal"
+              id="#"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Ville:</td>
+          <td>
+            <input
+              type="text"
+              placeholder="Entrer votre Ville"
+              title="Entrer votre Ville"
+              id="#"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="pays">Pays:</label></td>
+          <td>
+            <select id="pays">
+              <option value="SUISSE">SUISSE</option>
+              <option value="FRANCE">FRANCE</option>
+              <option value="CAMEROUN">CAMEROUN</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Centre d'intérets:</td>
+          <td>
+            <table>
+              <tr>
+                <td>
+                  <input type="checkbox" value="Sport" name="" id="#" />Sport
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    value="Jeux Vidéo"
+                    name=""
+                    id="#"
+                  />Jeux Vidéo
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="checkbox"
+                    value="Internet"
+                    name=""
+                    id="#"
+                  />Internet
+                </td>
+                <td>
+                  <input type="checkbox" value="Voyage" name="" id="#" />Voyage
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="Message">Message</td>
+        </tr>
+      </table>
+      <textarea id="text" cols="35" rows="6"></textarea>
+      <center>
+        <input type="button" value="Envoyer" onclick="recuperation()"  /><input
+          type="reset"
+          value="Recommencer"
+          id="#"
+        />
+      </center>
+      <br>
+      <hr>
+    </form>
+  </body>
+  <script>
+    function recuperation(){
+
+    nom = document.getElementById("nom").value;
+    pays= document.getElementById('pays').value;
+    text= document.getElementById('text');
+    text.innerHTML = nom+" de nationalité "+pays;
+  
+    
+    }
+  </script>
+</html>

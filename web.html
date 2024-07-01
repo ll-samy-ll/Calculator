@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css\all.min.css" />
+    <link rel="stylesheet" href="css\fontawesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Dancing+Script:wght@400..700&family=Merriweather&family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+      * {
+        font-family: "Montserrat", sans-serif;
+      }
+      body{
+        background-color: rgb(249, 215, 163);
+        padding-top: 50px;
+        max-width: 100vw;
+        max-height: 100vh;
+        overflow-x: hidden; 
+        
+      }
+      #LOGO {
+        width: 70px;
+        height: 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #navBar {
+        width: 200px;
+        height: 50px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 20px;
+      }
+      #Login {
+        width: 70px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .login-btn {
+        color: #ffffff;
+        border: solid 1px;
+        border-radius: 10px;
+        background-color: transparent;
+        height: 30px;
+        width: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #head {
+        position: fixed;
+        z-index: 2;
+        top: 9px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 99%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 350px;
+        background-color: #000000;
+        border: none;
+        border-radius: 10px;
+        
+        
+      }
+      #elements {
+        width: 100%;
+        height: 1500px;
+        min-height: 550px;
+        background-color: rgb(249, 215, 163);
+      }
+      button {
+        cursor: pointer;
+        transition: all 1s;
+      }
+      .nav-btn {
+        color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        background-color: transparent;
+        height: 40px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo-btn {
+        border: none;
+        border-radius: 10px;
+        background-color: transparent;
+      }
+      .nav-btn:hover,
+      .login-btn:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+      .nav-btn:active,
+      .login-btn:active {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+      #contain{
+        margin: 20px;
+        height:300px ;
+        width:40% ;
+        border: none;
+      }
+      .name{
+        font-size: 100px;
+        margin: 10px;
+        font-weight: bold;
+      }
+      #POLA{
+        animation: moveLeftPola 2s forwards;
+        animation-delay: 1; 
+      }
+      @keyframes moveLeftPola {
+        from {
+          margin-left: -100%;
+        }
+        to {
+          margin-left: 0;
+        }
+      }
+      
+      #SAMY{
+        
+        margin-left: 100px;
+        font-family: "Dancing Script", cursive;
+        animation: moveLeftSamy 2s forwards;
+        animation-delay: 1;   
+      }
+
+      @keyframes moveLeftSamy {
+        from {
+          margin-left: -150%;
+        }
+        to {
+          margin-left: 100px;
+        }
+      }
+      #frontDev{
+        font-size: 20px;
+        margin-top: 20px;
+        margin-left: 200px;
+      }
+      .bars{
+        width: 700px;
+        height: 150px;
+        background-color: #000000;
+        border-radius: 100px; 
+        transform: rotate(-30deg);
+        margin: 40px;
+        animation: moveBar 2s forwards;
+        animation-delay: 1;   
+      }
+      #bar{    
+        position: absolute;
+        top: 5%;
+        left: 80%;
+      }
+      @media (max-width: 600px) {
+          .bars {
+          height: 150px; 
+        }
+      }
+
+      @media (max-width: 1500px) {
+          .bars {
+          height: 120px; 
+        }
+        #bar1,#bar2,#bar3{
+          margin-top: -15px;
+        }
+      }    
+      @keyframes moveBar1 {
+        from {
+          margin-left: 150%;
+        }
+        to {
+          margin-left: 0px;
+        }
+      }
+      @keyframes moveBar2 {
+        from {
+          margin-left: 150%;
+        }
+        to {
+          margin-left: 0px;
+        }
+      }
+      @keyframes moveBar3 {
+        from {
+          margin-left: 150%;
+        }
+        to {
+          margin-left: 0px;
+        }
+      }
+      #bar1{
+        animation: moveBar1 1s forwards;
+        animation-delay: 1;
+      }
+      #bar2{
+        animation: moveBar2 2s forwards;
+        animation-delay: 1;
+      }
+      #bar3{
+        animation: moveBar3 3s forwards;
+        animation-delay: 1;
+      }
+      
+    </style>
+  </head>
+  <body>
+      <div id="elements" >
+          <header id="head">
+            <div id="LOGO">
+              <button class="logo-btn">
+                <i class="fa-solid fa-house fa-2xl" id="homeLogo" style="color: #ffffff"></i>   
+            </div>
+            <div id="navBar">
+              <button class="nav-btn"><h3>Home</h3></button>
+              <button class="nav-btn"><h3>Services</h3></button>
+              <button class="nav-btn"><h3>More</h3></button>
+            </div>
+            <div id="Login">
+              <button class="login-btn"><h3>Login</h3></button>
+            </div>
+          </header>
+          <div id="contain" >
+            <p id="POLA" class="name" >POLA</p>
+            <p id="SAMY" class="name" >SAMY</p>
+            <p id="frontDev" >Front-end developer</p>
+            <div id="bar" >
+              <div class="bars" id="bar1" ></div>
+              <div class="bars" id="bar2" ></div>
+              <div class="bars" id="bar3" ></div>
+            </div>
+          </div>
+      </div>
+      <?php
+        echo "<p>BONJOUR JE SUIS POLA</p>";
+      ?>
+  </body>
+</html>

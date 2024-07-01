@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        position: relative;
+      }
+      .contain {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      input {
+        border: none;
+        text-align: center;
+      }
+
+      tr,
+      td {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contain">
+      <form>
+        <table border="1">
+          <tr>
+            <td colspan="2"><center>SUPERMARCHE CENTRAL</center></td>
+            <td colspan="2"><center>FACTURE N°145</center></td>
+          </tr>
+          <tr>
+            <td><center>Désignation</center></td>
+            <td><center>Quantité</center></td>
+            <td><center>Prix unitaire</center></td>
+            <td><center>Montant</center></td>
+          </tr>
+          <tr>
+            <td><center>Cahier</center></td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onclick="calcul()"
+                onkeyup="calcul()"
+                id="qteCahier"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onclick="calcul()"
+                onkeyup="calcul()"
+                id="prixUnitCahier"
+              />
+            </td>
+            <td>
+              <p id="montantCahier"></p>
+            </td>
+          </tr>
+          <tr>
+            <td><center>Crayon</center></td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onclick="calcul()"
+                onkeyup="calcul()"
+                id="qteCrayon"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onclick="calcul()"
+                onkeyup="calcul()"
+                id="prixUnitCrayon"
+              />
+            </td>
+            <td>
+              <p id="montantCrayon"></p>
+            </td>
+          </tr>
+          <tr>
+            <td><center>Gomme</center></td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onclick="calcul()"
+                onkeyup="calcul()"
+                id="qteGomme"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onclick="calcul()"
+                onkeyup="calcul()"
+                id="prixUnitGomme"
+              />
+            </td>
+            <td>
+              <p id="montantGomme" onclick="calcul()" onkeyup="calcul()"></p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3"><center>Montant total à payer</center></td>
+            <td><p id="montantTotal"></p></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+  <script>
+    function calcul() {
+      qteCahier = document.getElementById("qteCahier").value;
+      prixUnitCahier = document.getElementById("prixUnitCahier").value;
+      montantCahier = document.getElementById("montantCahier");
+
+      qteCrayon = document.getElementById("qteCrayon").value;
+      prixUnitCrayon = document.getElementById("prixUnitCrayon").value;
+      montantCrayon = document.getElementById("montantCrayon");
+
+      qteGomme = document.getElementById("qteGomme").value;
+      prixUnitGomme = document.getElementById("prixUnitGomme").value;
+      montantGomme = document.getElementById("montantGomme");
+
+      montantTotal = document.getElementById("montantTotal");
+
+      montantCahier.innerHTML =
+        parseInt(qteCahier) * parseFloat(prixUnitCahier);
+      montantCrayon.innerHTML =
+        parseInt(qteCrayon) * parseFloat(prixUnitCrayon);
+      montantGomme.innerHTML = parseInt(qteGomme) * parseFloat(prixUnitGomme);
+
+      montantTotal.innerHTML =
+        parseFloat(montantCahier.innerHTML) +
+        parseFloat(montantCrayon.innerHTML) +
+        parseFloat(montantGomme.innerHTML);
+    }
+  </script>
+</html>

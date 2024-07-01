@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h1>Let's Sort</h1>
+
+      <p id="textNonSorted"></p>
+      <p id="textSorted"></p>
+    </center>
+    <script>
+      var number = [0, 4, 9, 5, 8, 94, 9, 4, 5, 45, 365];
+      textNonSorted = document.getElementById("textNonSorted").innerHTML;
+      textSorted = document.getElementById("textSorted").innerHTML;
+      console.log(number);
+      var k;
+      for (i = 0; i < number.length; i++) {
+        //Parcourir le tableau
+        for (
+          j = 0;
+          j < number.length - i;
+          j++ //parcourir le tableau
+        ) {
+          if (number[j] < number[j + 1]) {
+            //condition de changement d'élement
+            [number[j], number[j + 1]] = [number[j + 1], number[j]];
+          } //Changement des éléments si la condition est validé
+        }
+      }
+      console.log(number);
+      console.log("le min est " + number[10] + " Le max est " + number[0]);
+      textNonSorted = number;
+      textSorted;
+    </script>
+  </body>
+</html>

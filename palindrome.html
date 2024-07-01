@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        position: relative;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-size: 50px;
+      }
+
+      .container {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      input {
+        width: 301px;
+        height: 40px;
+        font-size: 20px;
+      }
+      p {
+        font-size: 39px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Entrer un mot</p>
+      <input
+        type="text"
+        placeholder="Entrer un mot"
+        id="input"
+        oninput="textIntable()"
+      />
+      <p id="reversedText"></p>
+    </div>
+  </body>
+  <script>
+    input = document.getElementById("input");
+    reversedText = document.getElementById("reversedText");
+    let tab = [];
+    function textIntable() {
+      tab = [...input.value];
+    }
+    function reverse() {
+      reverseTable = tab.toReversed();
+      reversedText.innerHTML = reverseTable.join("");
+      if (reversedText.innerHTML == input.value) {
+        reversedText.innerHTML += " est un palindrome";
+      }
+      if (input.value == "") {
+        reversedText.innerHTML = "";
+      }
+    }
+    function pressEnterToReverse(event) {
+      if (event.code == "Enter") {
+        reverse();
+      }
+    }
+    window.addEventListener("keydown", pressEnterToReverse);
+  </script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      value=""
+      id="enterNumber"
+      title="entrer un nombre de 1 à 8"
+      placeholder="entrer un nombre de 1 à 8"
+    />
+    <input type="button" value="comptons" onclick="displayNumber()" />
+    <p id="showNumber"></p>
+
+    <script>
+      var x = ["Un", "Deux", "Trois", "Quatre", "Cinq", "Six", "Sept", "Huit"];
+
+      enterNumber = document.getElementById("enterNumber");
+      showNumber = docment.getElementById("showNumber");
+
+      function displayNumber() {
+        for (i = 0; i < x.length; i++) {
+          if (enterNumber.value == i) {
+            showNumber.innerHTML =
+              enterNumber.value +
+              " en terme numérique vaut " +
+              x[i - 1] +
+              " en terme alphabétique.";
+          }
+
+          var tab = [30, 9, 100];
+
+          alert(tab.sort());
+        }
+      }
+    </script>
+  </body>
+</html>

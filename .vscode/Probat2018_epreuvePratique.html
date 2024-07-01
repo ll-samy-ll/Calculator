@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        position: relative;
+      }
+
+      #form {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .text {
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        font-weight: bold;
+      }
+      input {
+        width: 177px;
+        height: 53px;
+        border: none;
+        text-align: center;
+      }
+      .sizeMoy {
+        width: 182px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <table border="1">
+        <tr>
+          <td></td>
+          <td></td>
+          <td colspan="2">
+            <div class="text" id="MATIERES"><center>MATIERES</center></div>
+          </td>
+          <td class="sizeMoy"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><div class="text">Français</div></td>
+          <td><div class="text">Anglais</div></td>
+          <td><div class="text" class="sizeMoy">MOYENNE</div></td>
+        </tr>
+        <tr>
+          <td rowspan="3"><div class="text">élèves</div></td>
+          <td><div class="text">Lucie</div></td>
+          <td>
+            <input
+              type="number"
+              onclick="calcul()"
+              onkeyup="calcul()"
+              value="0"
+              min="0"
+              max="20"
+              id="françaisLuc"
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              onclick="calcul()"
+              onkeyup="calcul()"
+              value="0"
+              min="0"
+              max="20"
+              id="anglaisLuc"
+            />
+          </td>
+          <td><p id="moyLuc" class="sizeMoy">0</p></td>
+        </tr>
+        <tr>
+          <td><div class="text">Claire</div></td>
+          <td>
+            <input
+              type="number"
+              onclick="calcul()"
+              onkeyup="calcul()"
+              value="0"
+              min="0"
+              max="20"
+              id="françaisCla"
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              onclick="calcul()"
+              onkeyup="calcul()"
+              value="0"
+              min="0"
+              max="20"
+              id="anglaisCla"
+            />
+          </td>
+          <td><p id="moyCla" class="sizeMoy">0</p></td>
+        </tr>
+        <tr>
+          <td><div class="text">Lydie</div></td>
+          <td>
+            <input
+              type="number"
+              onclick="calcul()"
+              onkeyup="calcul()"
+              value="0"
+              min="0"
+              max="20"
+              id="françaisLyd"
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              onclick="calcul()"
+              onkeyup="calcul()"
+              value="0"
+              min="0"
+              max="20"
+              id="anglaisLyd"
+            />
+          </td>
+          <td><p id="moyLyd" class="sizeMoy">0</p></td>
+        </tr>
+      </table>
+    </form>
+    <footer></footer>
+  </body>
+  <script>
+    function calcul() {
+      françaisLuc = document.getElementById("françaisLuc").value;
+      anglaisLuc = document.getElementById("anglaisLuc").value;
+      moyLuc = document.getElementById("moyLuc");
+
+      françaisCla = document.getElementById("françaisCla").value;
+      anglaisCla = document.getElementById("anglaisCla").value;
+      moyCla = document.getElementById("moyCla");
+
+      françaisLyd = document.getElementById("françaisLyd").value;
+      anglaisLyd = document.getElementById("anglaisLyd").value;
+      moyLyd = document.getElementById("moyLyd");
+
+      moyLuc.innerHTML = (parseInt(françaisLuc) + parseInt(anglaisLuc)) / 2;
+      moyCla.innerHTML = (parseInt(françaisCla) + parseInt(anglaisCla)) / 2;
+      moyLyd.innerHTML = (parseInt(françaisLyd) + parseInt(anglaisLyd)) / 2;
+    }
+  </script>
+</html>

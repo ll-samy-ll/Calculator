@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #input {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Convertisseur Décimal à Binaire</h1>
+    <input id="input" type="number" placeholder="Entrez un nombre décimal" />
+    <button onclick="convertToBinary()">Convertir</button>
+    <p id="output"></p>
+
+    <script>
+      function convertToBinary() {
+        var input = document.getElementById("input").value;
+        var output = document.getElementById("output");
+        if (input === "") {
+          output.innerHTML = "Veuillez entrer un nombre décimal.";
+        } else {
+          output.innerHTML = "Binaire: " + parseInt(input, 10).toString(2);
+        }
+      }
+    </script>
+  </body>
+</html>

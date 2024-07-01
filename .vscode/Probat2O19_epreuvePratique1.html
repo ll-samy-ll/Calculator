@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        position: relative;
+      }
+      input {
+        width: 221px;
+        border: none;
+      }
+      #formulaire {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <form id="formulaire">
+      <table border="1">
+        <tr>
+          <td rowspan="2"><center>NOMS</center></td>
+          <td colspan="2"><center>MOYENNE</center></td>
+          <td rowspan="2"><center>MOYENNE TRIMESTRIELLE</center></td>
+        </tr>
+        <tr>
+          <td><center>SEQUENCE 1</center></td>
+          <td><center>SEQUENCE 2</center></td>
+        </tr>
+        <tr>
+          <td>ROBERT</td>
+          <td><input type="number" min="0" max="20" id="ROBseq1" /></td>
+          <td><input type="number" min="0" max="20" id="ROBseq2" /></td>
+          <td>
+            <p id="ROBtri"></p>
+          </td>
+        </tr>
+        <tr>
+          <td>ANICET</td>
+          <td><input type="number" min="0" max="20" id="ANIseq1" /></td>
+          <td><input type="number" min="0" max="20" id="ANIseq2" /></td>
+          <td>
+            <p id="ANItri"></p>
+          </td>
+        </tr>
+        <tr>
+          <td>MBASSA</td>
+          <td><input type="number" min="0" max="20" id="MBAseq1" /></td>
+          <td><input type="number" min="0" max="20" id="MBAseq2" /></td>
+          <td>
+            <p id="MBAtri"></p>
+          </td>
+        </tr>
+        <tr>
+          <td>DEMANOU</td>
+          <td><input type="number" min="0" max="20" id="DEMseq1" /></td>
+          <td><input type="number" min="0" max="20" id="DEMseq2" /></td>
+          <td>
+            <p id="DEMtri"></p>
+          </td>
+        </tr>
+      </table>
+      <button type="button" onclick="calculAuto()">soumettre</button>
+      <button type="reset">effacer</button>
+    </form>
+    <script>
+      function calculAuto() {
+        ROBseq1 = document.getElementById("ROBseq1").value;
+        ROBseq2 = document.getElementById("ROBseq2").value;
+        ROBtri = document.getElementById("ROBtri");
+
+        ANIseq1 = document.getElementById("ANIseq1").value;
+        ANIseq2 = document.getElementById("ANIseq2").value;
+        ANItri = document.getElementById("ANItri");
+
+        MBAseq1 = document.getElementById("MBAseq1").value;
+        MBAseq2 = document.getElementById("MBAseq2").value;
+        MBAtri = document.getElementById("MBAtri");
+
+        DEMseq1 = document.getElementById("DEMseq1").value;
+        DEMseq2 = document.getElementById("DEMseq2").value;
+        DEMtri = document.getElementById("DEMtri");
+
+        ROBtri.innerHTML = (parseFloat(ROBseq1) + parseFloat(ROBseq2)) / 2;
+        MBAtri.innerHTML = (parseFloat(MBAseq1) + parseFloat(MBAseq2)) / 2;
+        ANItri.innerHTML = (parseFloat(ANIseq1) + parseFloat(ANIseq2)) / 2;
+        DEMtri.innerHTML = (parseFloat(DEMseq1) + parseFloat(DEMseq2)) / 2;
+      }
+
+      function pressEnterToCalcul(event) {
+        if (event.code == "Enter") {
+          calculAuto();
+        }
+      }
+      window.addEventListener("keyup", pressEnterToCalcul);
+    </script>
+  </body>
+</html>

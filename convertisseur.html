@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+<body>
+    <h1>CONVERTISSEUR DE MONNAIE</h1>
+
+    entrer votre montant en FCFA: <input type="number"  id="fcfaAmout"><br>
+    votre équivalent en DOLLARS: <p id="dollarAmount"></p><br>
+    votre équivalent en Euro: <p id="euroAmount"></p><br>
+
+    <input type="button" value="convertir" onclick="convertir()">
+    <script  >
+      function convertir() {
+        const fcfaAmout = parseFloat(document.getElementById("fcfaAmout").value);
+        const amount_Dollard = parseFloat(fcfaAmout / 550);
+        const amount_Euro = parseFloat(fcfaAmout / 650);
+      
+        document.getElementById("dollarAmount").innerHTML = amount_Dollard + " $";
+        document.getElementById("euroAmount").innerHTML = amount_Euro + " €";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>MET CHOISI</h1>
+
+    <input type="radio" value="Le TAPIOCA" id="tapioca" name="met" />LE TAPIOCA
+    <br />
+    <input type="radio" value="Le KATI'I" id="kati" name="met" />LE KATI'I
+    <br />
+    <input type="radio" value="Le SANGA" id="sanga" name="met" />LE SANGA <br />
+    <input type="radio" value="Le BONGO TCHOBI" id="bongo" name="met" />LE BONGO
+    TCHOBI <br />
+
+    <input
+      type="button"
+      value="Afficher le met choisi"
+      onclick="afficheMet()"
+    />
+
+    <script>
+      function afficheMet() {
+        var inputs = document.getElementsByTagName("input");
+        inputslength = inputsLength;
+
+        for (i = 0; i < inputslength; i++) {
+          if (inputs[i].type == "radio" && inputs[i].checked) {
+            alert("le met choisis est: " + inputs[i].value);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

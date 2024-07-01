@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .formulaire {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      body {
+        position: relative;
+        font-weight: bold;
+      }
+      input {
+        width: 120px;
+        height: 50px;
+        border: none;
+        text-align: center;
+        font-weight: bold;
+      }
+      #ration {
+        transform: rotate(270deg);
+      }
+      p {
+        width: 120px;
+        height: 50px;
+      }
+      center {
+        width: 150px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="formulaire">
+      <table border="1">
+        <tr>
+          <td rowspan="6"><center id="ration">RATION</center></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><center>MARDI</center></td>
+          <td><center>MERCREDI</center></td>
+          <td><center>JEUDI</center></td>
+          <td><center>TOTAL</center></td>
+        </tr>
+        <tr>
+          <td><center>PROTEINES</center></td>
+          <td>
+            <center>
+              <input
+                type="number"
+                min="0"
+                id="quantité0"
+                onkeyup="calculTotal()"
+                onclick="calculTotal()"
+                value="0"
+              />
+            </center>
+          </td>
+          <td>
+            <center>
+              <input
+                type="number"
+                min="0"
+                id="quantité1"
+                onkeyup="calculTotal()"
+                onclick="calculTotal()"
+                value="0"
+              />
+            </center>
+          </td>
+          <td>
+            <center>
+              <input
+                type="number"
+                min="0"
+                id="quantité2"
+                onkeyup="calculTotal()"
+                onclick="calculTotal()"
+                value="0"
+              />
+            </center>
+          </td>
+          <td>
+            <center><p id="totalPro"></p></center>
+          </td>
+        </tr>
+        <tr>
+          <td><center>SELS MINERAUX</center></td>
+          <td>
+            <center>
+              <input
+                type="number"
+                min="0"
+                id="quantité3"
+                onkeyup="calculTotal()"
+                onclick="calculTotal()"
+                value="0"
+              />
+            </center>
+          </td>
+          <td>
+            <center>
+              <input
+                type="number"
+                min="0"
+                id="quantité4"
+                onkeyup="calculTotal()"
+                onclick="calculTotal()"
+                value="0"
+              />
+            </center>
+          </td>
+          <td>
+            <center>
+              <input
+                type="number"
+                min="0"
+                id="quantité5"
+                onkeyup="calculTotal()"
+                onclick="calculTotal()"
+                value="0"
+              />
+            </center>
+          </td>
+          <td>
+            <center><p id="totalSel"></p></center>
+          </td>
+        </tr>
+        <tr>
+          <td><center>LIPIDES</center></td>
+          <td>
+            <center>
+              <input
+                type="number"
+                min="0"
+                id="quantité6"
+                onkeyup="calculTotal()"
+                onclick="calculTotal()"
+                value="0"
+              />
+            </center>
+          </td>
+          <td>
+            <center>
+              <input
+                type="number"
+                min="0"
+                id="quantité7"
+                onkeyup="calculTotal()"
+                onclick="calculTotal()"
+                value="0"
+              />
+            </center>
+          </td>
+          <td>
+            <center>
+              <input
+                type="number"
+                min="0"
+                id="quantité8"
+                onkeyup="calculTotal()"
+                onclick="calculTotal()"
+                value="0"
+              />
+            </center>
+          </td>
+          <td>
+            <center><p id="totalLip"></p></center>
+          </td>
+        </tr>
+        <tr>
+          <td><center>TOTAL</center></td>
+          <td>
+            <center><p id="totalJourMar"></p></center>
+          </td>
+          <td>
+            <center><p id="totalJourMer"></p></center>
+          </td>
+          <td>
+            <center><p id="totalJourJeu"></p></center>
+          </td>
+          <td>
+            <center><p id="totalJour"></p></center>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      function calculTotal() {
+        quantité0 = document.getElementById("quantité0");
+        quantité1 = document.getElementById("quantité1");
+        quantité2 = document.getElementById("quantité2");
+        quantité3 = document.getElementById("quantité3");
+        quantité4 = document.getElementById("quantité4");
+        quantité5 = document.getElementById("quantité5");
+        quantité6 = document.getElementById("quantité6");
+        quantité7 = document.getElementById("quantité7");
+        quantité8 = document.getElementById("quantité8");
+
+        totalPro = document.getElementById("totalPro");
+        totalSel = document.getElementById("totalSel");
+        totalLip = document.getElementById("totalLip");
+
+        totalJourMar = document.getElementById("totalJourMar");
+        totalJourMer = document.getElementById("totalJourMer");
+        totalJourJeu = document.getElementById("totalJourJeu");
+
+        totalPro.innerHTML =
+          parseInt(quantité0.value) +
+          parseInt(quantité1.value) +
+          parseInt(quantité2.value);
+        totalSel.innerHTML =
+          parseInt(quantité3.value) +
+          parseInt(quantité4.value) +
+          parseInt(quantité5.value);
+        totalLip.innerHTML =
+          parseInt(quantité6.value) +
+          parseInt(quantité7.value) +
+          parseInt(quantité8.value);
+
+        totalJourMar.innerHTML =
+          parseInt(quantité0.value) +
+          parseInt(quantité3.value) +
+          parseInt(quantité6.value);
+        totalJourMer.innerHTML =
+          parseInt(quantité1.value) +
+          parseInt(quantité4.value) +
+          parseInt(quantité7.value);
+        totalJourJeu.innerHTML =
+          parseInt(quantité2.value) +
+          parseInt(quantité5.value) +
+          parseInt(quantité8.value);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function personne(nom, age, taille, sex, quartier) {
+        this.Nom = nom;
+        this.âge = age;
+        this.Taille = taille;
+        this.Sexe = sex;
+        this.quartierDeRésidence = quartier;
+      }
+      function voiture(fab, prop, donnée) {
+        this.Fabricant = fab;
+        this.propriétaire = prop;
+        this.donnéeDuVéhicule = donnée;
+
+        this.genererMessage = function () {
+          alert(
+            this.propriétaire.nom +
+              "possède une " +
+              this.Fabricant +
+              ", voiture crée en " +
+              this.donnéeDuVéhicule
+          );
+        };
+      }
+      var utilisateur1 = new personne(
+        "Pola",
+        25 + "ans",
+        1.82 + "m",
+        "M",
+        "Nkoabang"
+      );
+      var utilisateur2 = new personne(
+        prompt("Entrer un nom"),
+        16 + "ans",
+        1.6 + "m",
+        "F",
+        "awae"
+      );
+      var Voiture = new voiture("Mercedes", utilisateur1, 1992);
+
+      voiture.genererMessage();
+    </script>
+  </body>
+</html>
